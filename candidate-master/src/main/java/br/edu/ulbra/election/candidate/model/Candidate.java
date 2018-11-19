@@ -4,63 +4,61 @@ import javax.persistence.*;
 
 @Entity
 public class Candidate {
-	
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private Long numberElection;
+
+    @Column(nullable = false)
+    private Long electionId;
 
     @Column(nullable = false)
     private Long partyId;
 
-    @Column(nullable = false, name="number")
-    private Long numberElection;
-    
-    @Column(nullable = false)
-    private Long electionId;
+    public Long getId() {
+        return id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Long getNumberElection() {
+        return numberElection;
+    }
 
-	public Long getPartyId() {
-		return partyId;
-	}
+    public void setNumberElection(Long numberElection) {
+        this.numberElection = numberElection;
+    }
 
-	public void setPartyId(Long partyId) {
-		this.partyId = partyId;
-	}
+    public Long getElectionId() {
+        return electionId;
+    }
 
-	public Long getNumberElection() {
-		return numberElection;
-	}
+    public void setElectionId(Long electionId) {
+        this.electionId = electionId;
+    }
 
-	public void setNumberElection(Long numberElection) {
-		this.numberElection = numberElection;
-	}
+    public Long getPartyId() {
+        return partyId;
+    }
 
-	public Long getElectionId() {
-		return electionId;
-	}
-
-	public void setElectionId(Long electionId) {
-		this.electionId = electionId;
-	}
-	
-	
+    public void setPartyId(Long partyId) {
+        this.partyId = partyId;
+    }
 
 }
